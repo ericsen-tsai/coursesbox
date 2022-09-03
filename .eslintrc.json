@@ -1,3 +1,8 @@
 {
-  "extends": ["plugin:storybook/recommended", "next/core-web-vitals"]
+  "extends": ["plugin:storybook/recommended", "next/core-web-vitals"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error", { "singleQuote": true, "semi": false }],
+    "react/no-unknown-property": 0
+  }
 }
