@@ -2,7 +2,7 @@ import { expect } from '@storybook/jest'
 import { screen } from '@storybook/testing-library'
 import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
 
-import Tile from './Tile'
+import Tile from './index'
 
 export default {
   title: 'Content/Tile',

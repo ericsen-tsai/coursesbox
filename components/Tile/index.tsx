@@ -1,9 +1,10 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import styled from '@emotion/styled'
 
 import { boxShadow, borderRadius } from '@/components/styles'
 
 type Props = {
+  /** Header string */
   header: string
   children: ReactNode
 }

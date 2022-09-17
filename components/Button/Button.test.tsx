@@ -1,7 +1,6 @@
-import React from 'react'
 import { render, screen } from '@/test-utils'
 import userEvent from '@testing-library/user-event'
-import { Button } from './Button'
+import { Button } from './index'
 
 describe('button test cases', () => {
   it('Render check', () => {
