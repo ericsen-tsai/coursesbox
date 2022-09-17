@@ -2,7 +2,7 @@ import { render, screen } from '@/test-utils'
 import userEvent from '@testing-library/user-event'
 import Button from './index'
 
-describe('button test cases', () => {
+describe('Button test cases', () => {
   it('Render check', () => {
     const onClick = jest.fn()
     const { asFragment } = render(<Button onClick={onClick}>Button</Button>)
