@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react'
+import { MouseEvent, FC } from 'react'
 import styled from '@emotion/styled'
 import { css, SerializedStyles } from '@emotion/react'
 import { AppTheme } from '@/styles/themes'
@@ -39,7 +39,7 @@ export const getColors = (color: Color, theme: AppTheme): SerializedStyles => {
   }
 }
 
-export const Button = styled.button<Props>`
+const Button = styled.button<Props>`
   all: unset;
   display: flex;
   justify-content: center;
@@ -64,3 +64,20 @@ export const Button = styled.button<Props>`
 `
 
 Button.defaultProps = { color: 'primary' }
+
+export default Button
+
+type DefinedButton = Omit<Props, 'color'>
+
+export const PrimaryButton: FC<DefinedButton> = (props) => (
+  <Button color="primary" {...props} />
+)
+export const SecondaryButton: FC<DefinedButton> = (props) => (
+  <Button color="secondary" {...props} />
+)
+export const DangerButton: FC<DefinedButton> = (props) => (
+  <Button color="danger" {...props} />
+)
+export const WarningButton: FC<DefinedButton> = (props) => (
+  <Button color="warning" {...props} />
+)
