@@ -6,12 +6,12 @@ exports[`Checkbox test cases Render check 1`] = `
     class="css-5y0pmi"
   >
     <input
-      id="prefix-fffffffff5014"
+      id="fffffffff5014"
       type="checkbox"
     />
     <label
       class="css-x787if"
-      for="prefix-fffffffff5014"
+      for="fffffffff5014"
     >
       ✓
     </label>
