@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch test cases Render check 1`] = `
+<DocumentFragment>
+  <label
+    class="css-4eji24"
+  >
+    <input
+      id="fffffffff5014"
+      type="checkbox"
+    />
+    <label
+      class="css-1fjxm02"
+      data-testid="SwitchVisiblePart"
+      for="fffffffff5014"
+    />
+  </label>
+</DocumentFragment>
+`;
