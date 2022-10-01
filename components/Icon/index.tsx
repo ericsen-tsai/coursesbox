@@ -6,7 +6,7 @@ export type AvailableIcons = keyof typeof Icons
 
 type WrapperProps = {
   /** Width and height */
-  size?: string
+  size?: number
 }
 
 export type Props = {
@@ -17,13 +17,13 @@ export type Props = {
 
 const Wrapper = styled.div<WrapperProps>`
   color: ${({ theme }) => theme.font.regular};
-  width: ${({ size }) => size};
-  height: ${({ size }) => size};
+  width: ${({ size }) => `${size}rem`};
+  height: ${({ size }) => `${size}rem`};
 `
 
-function Icon({ name, size = '2rem', ...rest }: Props) {
+function Icon({ name, size = 2, ...rest }: Props) {
   const RenderIcon = Icons[name]
-  const sizes = { width: size, height: size }
+  const sizes = { width: `${size}rem`, height: `${size}rem` }
 
   return (
     <Wrapper size={size}>
