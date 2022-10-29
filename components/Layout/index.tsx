@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import Link from 'next/link'
 import styled from '@emotion/styled'
 
+import StyledLink from '../StyledLink'
 import Logo from '../Logo'
 import Input from '../Input'
 import IconButton from '../IconButton'
@@ -51,14 +52,6 @@ const StyledLogo = styled(Logo)`
   }
 `
 
-const LogoLink = styled.a`
-  all: unset;
-  cursor: pointer;
-  &:hover {
-    opacity: 0.9;
-  }
-`
-
 const MainNav = styled.nav`
   grid-area: nav;
   display: flex;
@@ -94,18 +87,30 @@ const Footer = styled.footer`
   height: 5rem;
 `
 
-function Layout({ children }: { children: ReactNode }) {
+function Layout({
+  children,
+  isDark,
+  onThemeToggle,
+}: {
+  children: ReactNode
+  isDark: boolean
+  onThemeToggle: () => void
+}) {
   return (
     <Wrapper>
       <Link href="/" passHref>
-        <LogoLink>
+        <StyledLink>
           <StyledLogo size={3}>C8X</StyledLogo>
-        </LogoLink>
+        </StyledLink>
       </Link>
       <MainNav>
         <Link href="/all">All</Link>
         <Link href="/news">News</Link>
-        <IconButton name="Moon" size={1} onClick={() => {}} />
+        <IconButton
+          name={isDark ? 'Sun' : 'Moon'}
+          size={1}
+          onClick={onThemeToggle}
+        />
       </MainNav>
       <SearchInput icon="Search" placeholder="Search" onChange={() => {}} />
       <Content>{children}</Content>
