@@ -7,9 +7,9 @@ export type Props = {
 }
 
 const Logo = styled.header<Props>`
-  font-family: Monoton;
+  font-family: 'Monoton', cursive;
   font-size: ${({ size = 3 }) => `${size}rem`};
-  font-weight: 'light';
+  font-weight: 400;
   ${({ theme, size = 3 }) => {
     return css`
       color: ${theme.font.logo};

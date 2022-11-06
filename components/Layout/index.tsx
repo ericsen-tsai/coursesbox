@@ -13,22 +13,33 @@ const Wrapper = styled.div`
   color: ${({ theme }) => theme.font.regular};
   background-color: ${({ theme }) => theme.background};
   padding: 0.5rem;
-  grid-template-areas: 'header' 'nav' 'search' 'content' 'footer';
+
+  grid-template-areas:
+    'header nav'
+    'search search'
+    'content content'
+    'footer footer';
+
+  nav {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 5vmin;
+  }
   @media (min-width: 500px) {
     grid-template-columns: 1fr 3fr;
     grid-template-areas:
-      'header search'
-      'nav nav'
+      'header nav'
+      'search search'
       'content content'
       'footer footer';
 
     nav {
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: flex-end;
     }
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 960px) {
     grid-template-columns: 1fr 4fr 2fr;
     grid-template-areas:
       'header search nav'
@@ -45,10 +56,21 @@ const StyledLogo = styled(Logo)`
   grid-area: header;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   height: 4rem;
+  & .logo_full {
+    display: none;
+    font-family: 'Monoton', cursive;
+  }
 
-  @media (max-width: 500px) {
-    justify-content: center;
+  @media (min-width: 560px) {
+    & .logo_short {
+      display: none;
+    }
+
+    & .logo_full {
+      display: inline;
+    }
   }
 `
 
@@ -57,7 +79,7 @@ const MainNav = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0.5rem;
+  margin: 0 2vmin;
   a {
     cursor: pointer;
     color: ${({ theme }) => theme.font.regular};
@@ -65,6 +87,10 @@ const MainNav = styled.nav`
       opacity: 0.7;
     }
   }
+`
+
+const LogoLink = styled(StyledLink)`
+  padding-right: 1vw;
 `
 
 const SearchInput = styled(Input)`
@@ -83,7 +109,7 @@ const Footer = styled.footer`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 5rem;
 `
 
@@ -99,9 +125,12 @@ function Layout({
   return (
     <Wrapper>
       <Link href="/" passHref>
-        <StyledLink>
-          <StyledLogo size={3}>C8X</StyledLogo>
-        </StyledLink>
+        <LogoLink>
+          <StyledLogo size={3}>
+            <span className="logo_short">C8X</span>
+            <span className="logo_full">CoursesBox</span>
+          </StyledLogo>
+        </LogoLink>
       </Link>
       <MainNav>
         <Link href="/all">All</Link>

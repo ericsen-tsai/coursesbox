@@ -1,13 +1,16 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import { Global } from '@emotion/react'
 
+import { GlobalStyles } from '@/styles/global'
 function Document() {
   return (
     <Html>
       <Head>
         <link
+          href="https://fonts.googleapis.com/css2?family=Monoton&family=Poppins&display=swap"
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Poppins|Monoton&display=optional"
         />
+        <Global styles={GlobalStyles} />
       </Head>
       <body>
         <Main />
