@@ -133,8 +133,12 @@ function Layout({
         </LogoLink>
       </Link>
       <MainNav>
-        <Link href="/all">All</Link>
-        <Link href="/news">News</Link>
+        <Link href="/all" passHref>
+          <StyledLink>All</StyledLink>
+        </Link>
+        <Link href="/news" passHref>
+          <StyledLink>News</StyledLink>
+        </Link>
         <IconButton
           name={isDark ? 'Sun' : 'Moon'}
           size={1}
