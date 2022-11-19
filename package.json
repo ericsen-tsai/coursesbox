@@ -10,7 +10,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest --watch",
-    "test-all": "jest --all",
+    "test-all": "jest --all --ci",
     "chromatic": "npx chromatic --project-token=7c4ada7f272c"
   },
   "dependencies": {
